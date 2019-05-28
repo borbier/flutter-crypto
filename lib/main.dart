@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:crypto_watch/home_page.dart';
@@ -16,7 +17,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      theme: new ThemeData(primarySwatch: Colors.pink),
+      theme: new ThemeData(
+        primarySwatch: Colors.pink,
+        primaryColor: defaultTargetPlatform == TargetPlatform.iOS 
+          ? Colors.grey[100] 
+          : null
+      ),
       home: new HomePage(_currencies)
     );
   }

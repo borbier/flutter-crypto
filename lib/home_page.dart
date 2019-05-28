@@ -1,7 +1,5 @@
-import "dart:async";
-import "dart:convert";
+import 'package:flutter/foundation.dart';
 import "package:flutter/material.dart";
-import "package:http/http.dart" as http;
 
 
 class HomePage extends StatefulWidget {
@@ -19,7 +17,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: Text("Crypto Watch")
+        title: Text("Crypto Watch"),
+        elevation: defaultTargetPlatform == TargetPlatform.iOS ? 0.0 : 5.0,
       ),
       body: _cryptoWidget(),
     );
